@@ -1,0 +1,20 @@
+.form-control:focus {
+  border-color: $main;
+}
+
+.btn-success {
+  background: $main;
+  border: 1px solid $main;
+  color: $white;
+  margin-top: 1.5em;
+}
+
+.btn-success:hover {
+  background: $main-hover;
+  border: 1px solid $main;
+  color: $white;
+}
+
+.bottom-margin {
+  margin-bottom: 3em;
+}

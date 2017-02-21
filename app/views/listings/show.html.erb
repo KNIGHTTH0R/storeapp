@@ -1,19 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
+<div class = "col-md-13">
+  <div class="jumbotron">
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+      <p>
+        <b>
+         <h3 class = "font-main">
+           <%= @listing.name %>
+         </h3>
+        </b>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
+      <p>
+        <b>
+         <h6 class = "font-for-links">
+           <%= number_to_currency(@listing.price) %>
+         </h6>
+        </b>
+      </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+      <p>
+        <h4 class = "font-main">
+          <%= @listing.description %>
+        </h4>
+      </p>
+
+  <p>
+    <h6>
+      <%= link_to 'Edit', edit_listing_path(@listing), class: "font-for-links" %> 
+    </h6>
+  </p>
+
+  </div>
+</div>

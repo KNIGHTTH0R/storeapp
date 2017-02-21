@@ -1,5 +1,10 @@
-<h1>New Listing</h1>
+<h1 class="font-main label-color">Add New Item.</h1>
 
 <%= render 'form', listing: @listing %>
 
-<%= link_to 'Back', listings_path %>
+<br/>
+<center>
+  <div class="bottom-margin">
+    <%= link_to 'Back', listings_path, class: 'font-for-links' %>
+  </div>
+</center>
