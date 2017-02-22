@@ -4,8 +4,9 @@
     <% @listings.each do |listing| %>
       <div class="col-md-4">
         <div class="thumbnail">
-          <div class="caption">
+          <div class="caption text-align">
 
+            <%= link_to image_tag(listing.image.url), listing %>
             <h3 class = "font-main"><b><%= listing.name %></b></h4>
 
             <p>
@@ -14,11 +15,11 @@
               </h5>
             </p>
 
-            <h6>
+            <h5>
               <p class = "font-for-links"><b>
                <%= number_to_currency(listing.price) %>
              </b></p>
-            </h6>
+           </h5>
 
           </div>
         </div>
