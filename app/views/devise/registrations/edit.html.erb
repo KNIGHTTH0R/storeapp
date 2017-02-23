@@ -6,6 +6,12 @@
       <%= devise_error_messages! %>
 
       <br />
+      <div class="field">
+        <%= f.label :name, class: 'font-main' %><br />
+        <%= f.text_field :name, autofocus: true, placeholder: 'Enter your email', class: 'form-control font-main' %>
+      </div>
+
+      <br />
       <div class="form-group">
         <%= f.label :email, class: 'font-main' %><br />
         <%= f.email_field :email, autofocus: true, class: 'form-control font-main' %>
@@ -47,7 +53,7 @@
 
     <br />
     <center>
-      <%= link_to "Return Back Home.", :back %>
+      <%= link_to "Return Back Home.", :back , class: 'font-for-links' %>
     </center>
     <br />
   </div>
