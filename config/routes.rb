@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :listings
   root 'listings#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # static_pages
+  controller :static_pages do
+    get :trouble
+  end
 end

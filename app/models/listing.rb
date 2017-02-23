@@ -1,12 +1,12 @@
 class Listing < ApplicationRecord
 
-  #if Rails.env.development?
-    #has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
-  #else
+  if Rails.env.development?
+    has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+  else
     has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
-  #end
+  end
 
   validates :name, :description, :price, :image, presence: true
   validates :name, length: { minimum:15 }

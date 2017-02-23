@@ -1,0 +1,27 @@
+<br/>
+
+<div class="col-md-6 col-md-offset-3">
+
+  <div class="jumbotron">
+    <div class="container">
+      <b><h3 class="font-main">Resend confirmation instructions.</h3></b><hr>
+      <br />
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group">
+          <%= f.label :email, class: 'font-main' %>
+          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: 'Enter your email.', class: 'form-control font-main' %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Resend confirmation instructions", class: "btn btn-success form-control font-main" %>
+        </div>
+      <% end %>
+      <br/>
+      <hr>
+      <center><%= render "devise/shared/links" %></center>
+    </div>
+  </div>
+
+</div>
