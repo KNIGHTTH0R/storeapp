@@ -8,6 +8,7 @@ class Listing < ApplicationRecord
     has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+                      :path => ":style/:id_:filename"
   end
 
   validates :name, :description, :price, :image, presence: true
