@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "paperclip"
-gem "paperclip-dropbox", ">= 1.1.7"
+gem 'aws-sdk', '< 2.0'
 gem "figaro"
 gem 'devise'
 gem 'nprogress-rails'
