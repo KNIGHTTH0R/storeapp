@@ -16,7 +16,7 @@ module Storeapp
       port:                 587,
       domain:               'gmail.com',
       user_name:            'mail.myrailsapp@gmail.com',
-      password:             'QWERTY123',
+      password:             ENV["mail_pass"],
       authentication:       :plain,
       enable_starttls_auto: true
     }
