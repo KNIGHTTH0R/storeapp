@@ -2,12 +2,12 @@ class Listing < ApplicationRecord
 
   belongs_to :user
 
-  if Rails.env.development?
-    has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
-  else
+  if Rails.env.production?
     has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+    else
+      has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
   end
 
   validates :name, :description, :price, :image, presence: true
@@ -16,5 +16,6 @@ class Listing < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_with AttachmentSizeValidator, attributes: :image, less_than: 1.megabytes
+    
 
 end
