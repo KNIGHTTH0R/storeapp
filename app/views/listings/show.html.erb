@@ -37,13 +37,13 @@
       </p>
 
     </div>
-  <p>
-    <h6>
-      <% if (user_signed_in?) && (current_user.id == @listing.user_id) %>
-        <%= link_to 'Edit', edit_listing_path(@listing), class: "font-for-links" %>
-      <% end %>
-    </h6>
-  </p>
+    <p>
+      <h6>
+        <% if (user_signed_in?) && (current_user.id == @listing.user_id) %>
+          <%= link_to 'Edit', edit_listing_path(@listing), class: "font-for-links" %>
+        <% end %>
+      </h6>
+    </p>
 
   </div>
 </div>

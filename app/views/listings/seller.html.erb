@@ -1,0 +1,52 @@
+<% if current_user.listings.present? %>
+
+  <center>
+    <h4 class="font-main">
+        <b><%= current_user.name %></b>, here are your all listings. You can easily
+        <%= link_to 'Add new item for sale.', new_listing_path, class:'font-for-links' %>
+    </h4>
+    <hr>
+  </center>
+
+    <div class="center">
+      <div class="row">
+        <% @listings.each do |listing| %>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <div class="caption text-align">
+
+                <%= link_to image_tag(listing.image.url), listing %>
+                <h3 class = "font-for-links"><b><%= listing.name %></b></h4>
+
+                <p>
+                  <h5>
+                    <%= truncate(listing.description, length:175, class: "font-main") %>... <%= link_to 'See more', listing, class: "font-for-links" %>
+                  </h5>
+                </p>
+
+                <h5>
+                  <p class = "font-for-links"><b>
+                   <%= number_to_currency(listing.price) %>
+                 </b></p>
+               </h5>
+               <hr>
+               <h5><center>
+                 <p class = "font-for-links"><b>
+                   <%= link_to 'Manage Listing', edit_listing_path(listing), class: "font-for-links" %>
+                </b></p>
+              <center></h5>
+
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  <% else %>
+
+    <h3 class="font-main center-align">
+      You haven't listed any item yet, Start selling now! <b><%= link_to 'Create New Listing', new_listing_path, class: 'font-for-links' %>
+    </h3>
+
+  <% end %>

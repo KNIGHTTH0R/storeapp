@@ -5,7 +5,8 @@
 <br/>
 <center>
   <div class="bottom-margin">
-    <%= link_to 'Destroy', listing_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'font-for-links' %> |
-    <%= link_to 'Back', listings_path, class: 'font-for-links' %>
+    <b>
+      <%= button_to "Delete Listing", listing_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger form-control' %></p>
+    </b>
   </div>
 </center>
