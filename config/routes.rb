@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root 'listings#index'
   get 'seller' => "listings#seller"
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
 
 
   # static_pages

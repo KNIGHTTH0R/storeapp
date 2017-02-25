@@ -1,32 +1,33 @@
 <%= form_for([@listing, @order]) do |f| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2 class="font-main"><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
       <% order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="font-for-links"><%= message %></li>
       <% end %>
       </ul>
     </div>
+    <hr>
   <% end %>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+  <div class="form-group">
+    <%= f.label :address, class: 'font-main' %>
+    <%= f.text_field :address, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :city, class: 'font-main' %>
+    <%= f.text_field :city, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+  <div class="form-group">
+    <%= f.label :state, class: 'font-main' %>
+    <%= f.text_field :state, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-success form-control font-main' %>
   </div>
 <% end %>
