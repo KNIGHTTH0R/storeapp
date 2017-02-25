@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # static_pages
   controller :static_pages do
     get :trouble
+    get :seller_center
   end
 
 end

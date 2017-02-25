@@ -1,55 +1,60 @@
 <div class = "col-md-13">
-  <div class="jumbotron text-align">
+  <div class="jumbotron">
+    <div class="text-align">
+      <div class="col-md-12">
 
-   <div class="col-md-4 top-s">
-     <%= image_tag @listing.image.url(:medium) %>
-   </div>
+       <div class="col-md-4 top-s">
+         <%= image_tag @listing.image.url(:medium) %>
+       </div>
 
-   <div class="col-md-8">
-      <p>
-        <b>
-         <h3 class = "font-for-links">
-           <%= @listing.name %>
-         </h3>
-        </b>
-      </p>
+       <div class="col-md-8">
+          <p>
+            <b>
+             <h3 class = "font-for-links">
+               <%= @listing.name %>
+             </h3>
+            </b>
+          </p>
 
-      <p>
-        <b>
-         <h5 class = "font-main">
-           Sold by - <%= link_to @listing.user.name, '#', class: 'font-for-links' %>
-         </h3>
-        </b>
-      </h5>
+          <p>
+            <b>
+             <h5 class = "font-main">
+               Sold by - <%= link_to @listing.user.name, '#', class: 'font-for-links' %>
+             </h3>
+            </b>
+          </h5>
 
-      <p>
-        <b>
-         <h5 class = "font-for-links">
-           <%= number_to_currency(@listing.price) %>
-         </h5>
-        </b>
-      </p>
+          <p>
+            <b>
+             <h5 class = "font-for-links">
+               <%= number_to_currency(@listing.price) %>
+             </h5>
+            </b>
+          </p>
 
-      <p>
-        <h4 class = "font-main">
-          <b>Product Details</b> - <%= @listing.description %>
-        </h4>
-      </p>
+          <p>
+            <h4 class = "font-main">
+              <b>Product Details</b> - <%= @listing.description %>
+            </h4>
+          </p>
 
-      <p>
-        <h4 class = "font-main">
-          <%= link_to 'Buy', new_listing_order_path(@listing), class: "btn btn-success form-control font-main"%>
-        </h4>
-      </p>
+          <p>
+            <h4 class = "font-main">
+              <%= link_to 'Buy', new_listing_order_path(@listing), class: "btn btn-success form-control font-main"%>
+            </h4>
+          </p>
 
+          <p>
+            <h6>
+              <% if current_user.id == @listing.user_id %>
+                <%= link_to 'Edit', edit_listing_path(@listing), class: "font-for-links" %>
+              <% end %>
+            </h6>
+          </p>
+
+        </div>
+        
+      </div>
     </div>
-    <p>
-      <h6>
-        <% if (user_signed_in?) && (current_user.id == @listing.user_id) %>
-          <%= link_to 'Edit', edit_listing_path(@listing), class: "font-for-links" %>
-        <% end %>
-      </h6>
-    </p>
-
   </div>
 </div>

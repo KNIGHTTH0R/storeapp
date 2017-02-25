@@ -12,8 +12,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right font-for-links">
         <% if user_signed_in? %>
-            <li class = "content-form"><%= link_to "Edit Profile", edit_user_registration_path %></li>
-            <li class = "content-form"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class = "content-form"><%= link_to "Your Profile", '#' %></li>
+                <li role="separator" class="divider"></li>
+                <li class = "content-form"><%= link_to "Seller Center", seller_center_path %></li>
+                <li class = "content-form"><%= link_to "Buyer Center", purchases_path %></li>
+                <li class = "content-form"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <li role="separator" class="divider"></li>
+                <li class = "content-form"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
           <% else %>
             <li class = "content-form"><%= link_to "Create New Account", new_user_registration_path %></li>
             <li class = "content-form"><%= link_to "Login", new_user_session_path  %></li>
